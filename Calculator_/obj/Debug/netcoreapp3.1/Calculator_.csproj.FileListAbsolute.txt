@@ -9,11 +9,11 @@ C:\Users\yukik\source\repos\Calculator_\Calculator_\bin\Debug\netcoreapp3.1\Calc
 C:\Users\yukik\source\repos\Calculator_\Calculator_\bin\Debug\netcoreapp3.1\Calculator_.runtimeconfig.dev.json
 C:\Users\yukik\source\repos\Calculator_\Calculator_\bin\Debug\netcoreapp3.1\Calculator_.dll
 C:\Users\yukik\source\repos\Calculator_\Calculator_\bin\Debug\netcoreapp3.1\Calculator_.pdb
-C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\MainWindow.baml
-C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.g.resources
 C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.AssemblyInfoInputs.cache
 C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.AssemblyInfo.cs
 C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.csproj.CoreCompileInputs.cache
 C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.dll
 C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.pdb
 C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.genruntimeconfig.cache
+C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\yukik\source\repos\Calculator_\Calculator_\obj\Debug\netcoreapp3.1\Calculator_.g.resources

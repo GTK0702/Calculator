@@ -43,7 +43,7 @@
         <Button x:Name="nine" Click="Button_Click_9" Grid.Row="4" Grid.Column="2" FontSize="70">9</Button>
 
         <Button x:Name="zero" Click="Button_Click_0" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0" FontSize="70">0</Button>
-        <Button x:Name="dot" IsEnabled="False" Click="Button_Click_dot" Grid.Row="5" Grid.Column="2" FontSize="70">.</Button>
+        <Button x:Name="dot" Click="Button_Click_dot" Grid.Row="5" Grid.Column="2" FontSize="70">.</Button>
 
     </Grid>
 </Window>

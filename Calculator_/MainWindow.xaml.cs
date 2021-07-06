@@ -20,6 +20,7 @@ namespace Calculator_
     /// </summary>
     public partial class MainWindow : Window
     {
+        //strListの長さの上限を6としたい
         int num = 0;
         decimal num1 = 0;
         decimal num2 = 0;
@@ -38,6 +39,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -46,6 +48,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -54,6 +57,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -62,6 +66,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
@@ -70,6 +75,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -78,6 +84,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
@@ -86,6 +93,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
@@ -94,6 +102,7 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
@@ -102,14 +111,24 @@ namespace Calculator_
             strList.Add(num.ToString());
             str = string.Join("", strList);
             view.Text = str;
+            
         }
 
         private void Button_Click_0(object sender, RoutedEventArgs e)
         {
             num = 0;
             strList.Add(num.ToString());
-            str = string.Join("", strList);
-            view.Text = str;
+            if (strList[0] == "0")
+            {
+                strList.Clear();
+                view.Text = "0";
+            }
+            else
+            {
+                str = string.Join("", strList);
+                view.Text = str;
+            }
+            
         }
 
         private void Button_Click_clear(object sender, RoutedEventArgs e)
@@ -117,18 +136,18 @@ namespace Calculator_
             strList.Clear();
             str = 0.ToString();
             view.Text = str;
-            add.IsEnabled = true;
-            subtraction.IsEnabled = true;
-            multiplication.IsEnabled = true;
-            division.IsEnabled = true;
+            ope = "";
+            IsOperate(ope);
             equal.IsEnabled = true;
+            dot.IsEnabled = true;
+
         }
 
         private void Button_Click_equal(object sender, RoutedEventArgs e)
         {
             if (str != "")
             {
-                num2 = Convert.ToInt32(str);
+                num2 = Convert.ToDecimal(str);
             }
             Caluculator cal = new Caluculator(num1,num2);
             switch (ope)
@@ -153,60 +172,107 @@ namespace Calculator_
                         num1 = 0;
                         num2 = 0;
                         str = 0.ToString();
-                        add.IsEnabled = false;
-                        subtraction.IsEnabled = false;
-                        multiplication.IsEnabled = false;
-                        division.IsEnabled = false;
-                        equal.IsEnabled = false;
                     }
+                    break;
+                default:
+                    num1 = Convert.ToDecimal(str);
+                    view.Text = str;
                     break;
             }
             strList.Clear();
+            str = "";
+            equal.IsEnabled = false;
+
         }
 
         private void Button_Click_dot(object sender, RoutedEventArgs e)
         {
-
+            if (num == 0)
+            {
+                strList.Add("0".ToString());
+            }
+            
+            strList.Add(".");
+            if(strList[0] == ".")
+            {
+                strList.Clear();
+                strList.Add("0");
+                strList.Add(".");
+            }
+            str = string.Join("", strList);
+            view.Text = str;
+            dot.IsEnabled = false;
         }
 
         private void Button_Click_add(object sender, RoutedEventArgs e)
         {
             if(str != "")
             {
-                num1 = Convert.ToInt32(str);
+                num1 = Convert.ToDecimal(str);
             }
             ope = "add";
+            IsOperate(ope);
             strList.Clear();
+            str = "";
+            dot.IsEnabled = true;
         }
 
         private void Button_Click_sub(object sender, RoutedEventArgs e)
         {
             if (str != "")
             {
-                num1 = Convert.ToInt32(str);
+                num1 = Convert.ToDecimal(str);
             }
             ope = "sub";
+            IsOperate(ope);
             strList.Clear();
+            str = "";
+            dot.IsEnabled = true;
         }
 
         private void Button_Click_mul(object sender, RoutedEventArgs e)
         {
             if (str != "")
             {
-                num1 = Convert.ToInt32(str);
+                num1 = Convert.ToDecimal(str);
             }
             ope = "mul";
+            IsOperate(ope);
             strList.Clear();
+            str = "";
+            dot.IsEnabled = true;
         }
 
         private void Button_Click_div(object sender, RoutedEventArgs e)
         {
             if (str != "")
             {
-                num1 = Convert.ToInt32(str);
+                num1 = Convert.ToDecimal(str);
             }
             ope = "div";
+            IsOperate(ope);
             strList.Clear();
+            str = "";
+            dot.IsEnabled = true;
+        }
+
+        private void IsOperate(string ope)
+        {
+            if(ope != "")
+            {
+                add.IsEnabled = false;
+                subtraction.IsEnabled = false;
+                multiplication.IsEnabled = false;
+                division.IsEnabled = false;
+            }
+            else
+            {
+                add.IsEnabled = true;
+                subtraction.IsEnabled = true;
+                multiplication.IsEnabled = true;
+                division.IsEnabled = true;
+            }
+
         }
     }
 
